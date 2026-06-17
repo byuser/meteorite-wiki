@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meteorite Wiki — A Guide to Meteorite Types</title>
+    <meta
+      name="description"
+      content="An introductory wiki covering the main types of meteorites, their composition, classification and famous examples."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">☄️ Meteorite Wiki</a>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="index.html" class="active">Home</a>
+          <a href="pages/types.html">Types</a>
+          <a href="pages/composition.html">Composition</a>
+          <a href="pages/classification.html">Classification</a>
+          <a href="pages/famous.html">Famous</a>
+          <a href="pages/about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="hero">
+          <h1>Explore the World of Meteorites</h1>
+          <p>
+            Meteorites are fragments of asteroids, the Moon and Mars that survive
+            their fiery plunge through Earth's atmosphere. This wiki is a friendly
+            introduction to what they are, what they're made of, and how
+            scientists tell them apart.
+          </p>
+          <a class="btn" href="pages/types.html">Browse meteorite types</a>
+        </section>
+
+        <section>
+          <h2 class="section-title">What is a meteorite?</h2>
+          <p class="lead">
+            A <strong>meteoroid</strong> is a small rocky or metallic body
+            travelling through space. When it enters the atmosphere and glows it
+            becomes a <strong>meteor</strong> (a "shooting star"). Any piece that
+            survives to reach the ground is called a <strong>meteorite</strong>.
+            Studying meteorites lets us hold pieces of the early Solar System —
+            and even other worlds — in our hands.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="section-title">Featured types</h2>
+          <p class="lead">A taste of the types you can explore in this wiki.</p>
+          <div id="featured-grid" class="card-grid"></div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Three main groups</h2>
+          <div id="class-overview" class="card-grid"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Meteorite Wiki — an educational project. Content for learning purposes.</p>
+      </div>
+    </footer>
+
+    <script src="data/meteorites.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

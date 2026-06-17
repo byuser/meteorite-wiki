@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meteorite Composition — Meteorite Wiki</title>
+    <meta
+      name="description"
+      content="The minerals and elements that make up meteorites, from olivine and pyroxene to kamacite and taenite."
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="../index.html">☄️ Meteorite Wiki</a>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="types.html">Types</a>
+          <a href="composition.html" class="active">Composition</a>
+          <a href="classification.html">Classification</a>
+          <a href="famous.html">Famous</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>Meteorite Composition</h1>
+        <div class="prose">
+          <p class="lead">
+            Almost every meteorite is built from a mix of silicate minerals and
+            an iron–nickel metal alloy. The balance between these two ingredients
+            is what separates stony, stony-iron and iron meteorites. Below are the
+            most important minerals and metals you'll meet across this wiki.
+          </p>
+        </div>
+
+        <h2 class="section-title">Key minerals & metals</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Component</th>
+              <th scope="col">Type</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody id="composition-body"></tbody>
+        </table>
+
+        <div class="prose">
+          <h2 class="section-title">Silicates vs. metal</h2>
+          <p>
+            <strong>Silicate minerals</strong> such as olivine and pyroxene
+            dominate stony meteorites. <strong>Iron–nickel metal</strong>, made of
+            the alloys kamacite and taenite, dominates iron meteorites. Stony-irons
+            sit in between, with both present in roughly equal amounts.
+          </p>
+          <h2 class="section-title">The Widmanstätten pattern</h2>
+          <p>
+            When an iron meteorite is cut, polished and etched with acid, the
+            intergrowth of kamacite and taenite reveals a unique crisscross
+            structure called the Widmanstätten pattern. It can only form over
+            millions of years of extremely slow cooling deep inside a parent body,
+            so it is a reliable fingerprint of a genuine iron meteorite.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Meteorite Wiki — an educational project. Content for learning purposes.</p>
+      </div>
+    </footer>
+
+    <script src="../data/meteorites.js"></script>
+    <script src="../js/filter.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

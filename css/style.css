@@ -1,0 +1,335 @@
+/* Meteorite Wiki — global styles */
+
+:root {
+  --bg: #0b0d17;
+  --bg-panel: #161a2b;
+  --bg-card: #1d2236;
+  --accent: #ffb347;
+  --accent-soft: #ffd9a0;
+  --text: #e8eaf2;
+  --text-dim: #a4a9c0;
+  --border: #2c3250;
+  --radius: 12px;
+  --max-width: 1100px;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial,
+    sans-serif;
+  background: radial-gradient(circle at 20% -10%, #1b2240 0%, var(--bg) 55%);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+header.site-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(11, 13, 23, 0.85);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+nav.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+
+nav.main-nav a {
+  color: var(--text-dim);
+  font-weight: 500;
+  padding: 0.25rem 0;
+}
+
+nav.main-nav a.active,
+nav.main-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+main {
+  padding: 2.5rem 0 3.5rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 2.5rem 0 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.hero p {
+  color: var(--text-dim);
+  font-size: 1.15rem;
+  max-width: 40rem;
+  margin: 0 auto 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #1a1300;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-soft);
+  text-decoration: none;
+}
+
+/* ---------- Sections & headings ---------- */
+h2.section-title {
+  font-size: 1.6rem;
+  margin: 2.5rem 0 1rem;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+.lead {
+  color: var(--text-dim);
+  max-width: 50rem;
+}
+
+/* ---------- Cards grid ---------- */
+.card-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  margin-top: 1.25rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.card .icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.2rem;
+}
+
+.card .badge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--bg-panel);
+  color: var(--accent-soft);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  color: var(--text-dim);
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.card ul {
+  margin: 0 0 0.75rem;
+  padding-left: 1.1rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  color: var(--text-dim);
+}
+
+.card .example {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: 0.6rem;
+}
+
+/* ---------- Controls (search / filter) ---------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+
+.controls input[type="search"] {
+  flex: 1 1 220px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  padding: 0.55rem 1rem;
+  font-size: 0.95rem;
+}
+
+.controls input[type="search"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filter-btn {
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  color: #1a1300;
+  border-color: var(--accent);
+}
+
+.empty-state {
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Tables ---------- */
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
+}
+
+table.data-table th,
+table.data-table td {
+  text-align: left;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+table.data-table th {
+  color: var(--accent-soft);
+  font-weight: 600;
+}
+
+table.data-table tr:hover td {
+  background: var(--bg-panel);
+}
+
+/* ---------- Prose blocks ---------- */
+.prose p {
+  color: var(--text-dim);
+  max-width: 52rem;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+}
+
+/* ---------- Footer ---------- */
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+/* ---------- Responsive nav tweak ---------- */
+@media (max-width: 560px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

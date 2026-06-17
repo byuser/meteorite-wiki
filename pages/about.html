@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Meteorite Wiki</title>
+    <meta
+      name="description"
+      content="About the Meteorite Wiki — an educational project introducing meteorite types and composition."
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="../index.html">☄️ Meteorite Wiki</a>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="types.html">Types</a>
+          <a href="composition.html">Composition</a>
+          <a href="classification.html">Classification</a>
+          <a href="famous.html">Famous</a>
+          <a href="about.html" class="active">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>About This Wiki</h1>
+        <div class="prose">
+          <p class="lead">
+            The Meteorite Wiki is a small, self-contained educational website that
+            introduces the main types of meteorites, what they are made of, and
+            how they are classified.
+          </p>
+
+          <h2 class="section-title">What you'll find here</h2>
+          <p>
+            The wiki is organised into a handful of pages: an
+            <a href="../index.html">introduction</a>, a browsable gallery of
+            <a href="types.html">meteorite types</a>, a breakdown of their
+            <a href="composition.html">composition</a>, a guide to
+            <a href="classification.html">classification</a>, and a tour of some
+            <a href="famous.html">famous meteorites</a>.
+          </p>
+
+          <h2 class="section-title">How it's built</h2>
+          <p>
+            This site is intentionally simple: plain HTML, CSS and a little
+            JavaScript, with no build step or external dependencies. All of the
+            meteorite content lives in a single shared data file so the same
+            information powers every page and is checked by an automated test
+            suite.
+          </p>
+
+          <h2 class="section-title">A note on accuracy</h2>
+          <p>
+            Content here is summarised for learning and is not a substitute for
+            peer-reviewed sources. For authoritative data, see organisations such
+            as the Meteoritical Society and its Meteoritical Bulletin Database.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Meteorite Wiki — an educational project. Content for learning purposes.</p>
+      </div>
+    </footer>
+
+    <script src="../data/meteorites.js"></script>
+    <script src="../js/filter.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

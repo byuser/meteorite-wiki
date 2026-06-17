@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meteorite Classification — Meteorite Wiki</title>
+    <meta
+      name="description"
+      content="How scientists classify meteorites into stony, iron and stony-iron groups and their subgroups."
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="../index.html">☄️ Meteorite Wiki</a>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="types.html">Types</a>
+          <a href="composition.html">Composition</a>
+          <a href="classification.html" class="active">Classification</a>
+          <a href="famous.html">Famous</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>How Meteorites Are Classified</h1>
+        <div class="prose">
+          <p class="lead">
+            Classification starts with a simple question: how much metal does the
+            meteorite contain? That single trait sorts every meteorite into one of
+            three families, which are then divided into the specific types you can
+            browse on the Types page.
+          </p>
+        </div>
+
+        <h2 class="section-title">The classification tree</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Group</th>
+              <th scope="col">Abundance</th>
+              <th scope="col">Defining trait</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Stony</td>
+              <td>~94% of falls</td>
+              <td>Mostly silicate minerals; includes chondrites &amp; achondrites</td>
+            </tr>
+            <tr>
+              <td>Iron</td>
+              <td>~5% of falls</td>
+              <td>Mostly iron–nickel metal; sorted by nickel content</td>
+            </tr>
+            <tr>
+              <td>Stony-Iron</td>
+              <td>~1% of falls</td>
+              <td>Roughly equal metal and silicate; pallasites &amp; mesosiderites</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="prose">
+          <h2 class="section-title">Chondrites vs. achondrites</h2>
+          <p>
+            The biggest split among stony meteorites is whether they melted. A
+            <strong>chondrite</strong> never melted, so it still contains
+            chondrules — tiny beads of once-molten rock from the solar nebula. An
+            <strong>achondrite</strong> comes from a body that did melt, erasing
+            the chondrules and producing rock that looks volcanic.
+          </p>
+          <h2 class="section-title">Falls vs. finds</h2>
+          <p>
+            Meteorites are also described as <strong>falls</strong> (seen to fall
+            and then recovered) or <strong>finds</strong> (discovered later with no
+            observed fall). Falls are scientifically valuable because we know they
+            haven't spent long weathering on Earth's surface.
+          </p>
+        </div>
+
+        <h2 class="section-title">Explore the types</h2>
+        <div id="class-overview" class="card-grid"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Meteorite Wiki — an educational project. Content for learning purposes.</p>
+      </div>
+    </footer>
+
+    <script src="../data/meteorites.js"></script>
+    <script src="../js/filter.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "meteorite-wiki",
+  "version": "1.0.0",
+  "description": "A simple static wiki about the different types of meteorites, their composition and classification.",
+  "scripts": {
+    "test": "node tests/run.js",
+    "start": "node -e \"const http=require('http'),fs=require('fs'),path=require('path');const types={'.html':'text/html','.css':'text/css','.js':'text/javascript'};http.createServer((req,res)=>{let p=path.join(__dirname,decodeURIComponent(req.url.split('?')[0]));if(req.url==='/'||req.url==='')p=path.join(__dirname,'index.html');fs.readFile(p,(e,d)=>{if(e){res.writeHead(404);return res.end('Not found');}res.writeHead(200,{'Content-Type':types[path.extname(p)]||'application/octet-stream'});res.end(d);});}).listen(8080,()=>console.log('Meteorite Wiki running at http://localhost:8080'));\""
+  },
+  "keywords": ["meteorite", "wiki", "education", "astronomy"],
+  "license": "MIT"
+}
