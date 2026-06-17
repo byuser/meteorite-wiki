@@ -22,29 +22,34 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href="../index.html">☄️ Meteorite Wiki</a>
+        <a class="brand" href="../index.html" data-i18n="brand">☄️ Meteorite Wiki</a>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
-          <a href="types.html">Types</a>
-          <a href="composition.html">Composition</a>
-          <a href="classification.html" class="active">Classification</a>
-          <a href="identify.html">Identify</a>
-          <a href="famous.html">Famous</a>
-          <a href="glossary.html">Glossary</a>
-          <a href="quiz.html">Quiz</a>
-          <a href="about.html">About</a>
+          <a href="../index.html" data-i18n="nav.home">Home</a>
+          <a href="types.html" data-i18n="nav.types">Types</a>
+          <a href="composition.html" data-i18n="nav.composition">Composition</a>
+          <a href="classification.html" class="active" data-i18n="nav.classification">Classification</a>
+          <a href="identify.html" data-i18n="nav.identify">Identify</a>
+          <a href="famous.html" data-i18n="nav.famous">Famous</a>
+          <a href="glossary.html" data-i18n="nav.glossary">Glossary</a>
+          <a href="quiz.html" data-i18n="nav.quiz">Quiz</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+        
+          <div class="lang-switch" role="group" data-i18n-aria="lang.aria" aria-label="Language">
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="ru">RU</button>
+          </div>
         </nav>
       </div>
     </header>
 
     <main id="main">
       <div class="container">
-        <h1>How Meteorites Are Classified</h1>
+        <h1 data-i18n="class.h1">How Meteorites Are Classified</h1>
         <div class="prose">
-          <p class="lead">
+          <p class="lead" data-i18n="class.lead">
             Classification starts with a simple question: how much metal does the
             meteorite contain? That single trait sorts every meteorite into one of
             three families, which are then divided into the specific types you can
@@ -52,45 +57,45 @@
           </p>
         </div>
 
-        <h2 class="section-title">The classification tree</h2>
+        <h2 class="section-title" data-i18n="class.tree.h2">The classification tree</h2>
         <table class="data-table">
           <thead>
             <tr>
-              <th scope="col">Group</th>
-              <th scope="col">Abundance</th>
-              <th scope="col">Defining trait</th>
+              <th scope="col" data-i18n="class.th.group">Group</th>
+              <th scope="col" data-i18n="class.th.abundance">Abundance</th>
+              <th scope="col" data-i18n="class.th.trait">Defining trait</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Stony</td>
-              <td>~94% of falls</td>
-              <td>Mostly silicate minerals; includes chondrites &amp; achondrites</td>
+              <td data-i18n="class.row.stony.g">Stony</td>
+              <td data-i18n="class.row.stony.a">~94% of falls</td>
+              <td data-i18n="class.row.stony.t">Mostly silicate minerals; includes chondrites &amp; achondrites</td>
             </tr>
             <tr>
-              <td>Iron</td>
-              <td>~5% of falls</td>
-              <td>Mostly iron–nickel metal; sorted by nickel content</td>
+              <td data-i18n="class.row.iron.g">Iron</td>
+              <td data-i18n="class.row.iron.a">~5% of falls</td>
+              <td data-i18n="class.row.iron.t">Mostly iron–nickel metal; sorted by nickel content</td>
             </tr>
             <tr>
-              <td>Stony-Iron</td>
-              <td>~1% of falls</td>
-              <td>Roughly equal metal and silicate; pallasites &amp; mesosiderites</td>
+              <td data-i18n="class.row.si.g">Stony-Iron</td>
+              <td data-i18n="class.row.si.a">~1% of falls</td>
+              <td data-i18n="class.row.si.t">Roughly equal metal and silicate; pallasites &amp; mesosiderites</td>
             </tr>
           </tbody>
         </table>
 
         <div class="prose">
-          <h2 class="section-title">Chondrites vs. achondrites</h2>
-          <p>
+          <h2 class="section-title" data-i18n="class.ca.h2">Chondrites vs. achondrites</h2>
+          <p data-i18n-html="class.ca.p">
             The biggest split among stony meteorites is whether they melted. A
             <strong>chondrite</strong> never melted, so it still contains
             chondrules — tiny beads of once-molten rock from the solar nebula. An
             <strong>achondrite</strong> comes from a body that did melt, erasing
             the chondrules and producing rock that looks volcanic.
           </p>
-          <h2 class="section-title">Falls vs. finds</h2>
-          <p>
+          <h2 class="section-title" data-i18n="class.ff.h2">Falls vs. finds</h2>
+          <p data-i18n-html="class.ff.p">
             Meteorites are also described as <strong>falls</strong> (seen to fall
             and then recovered) or <strong>finds</strong> (discovered later with no
             observed fall). Falls are scientifically valuable because we know they
@@ -98,19 +103,21 @@
           </p>
         </div>
 
-        <h2 class="section-title">Explore the types</h2>
+        <h2 class="section-title" data-i18n="class.explore.h2">Explore the types</h2>
         <div id="class-overview" class="card-grid"></div>
       </div>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <p>Meteorite Wiki — an educational project. Content for learning purposes.</p>
+        <p data-i18n="footer">Meteorite Wiki — an educational project. Content for learning purposes.</p>
       </div>
     </footer>
 
     <script src="../data/meteorites.js"></script>
     <script src="../js/filter.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../data/ru.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

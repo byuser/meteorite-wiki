@@ -11,6 +11,8 @@ var path = require("path");
 var data = require("../data/meteorites.js");
 var filter = require("../js/filter.js");
 var quiz = require("../js/quiz.js");
+var i18n = require("../js/i18n.js");
+var ru = require("../data/ru.js");
 
 var passed = 0;
 var failed = 0;
@@ -85,9 +87,102 @@ data.classes.forEach(function (c) {
   );
 });
 
-// Composition entries are well formed.
+// Composition entries are well formed and now carry a photo.
 data.compositionEntries.forEach(function (e) {
   ok(!!e.name && !!e.kind && !!e.detail, "composition entry '" + e.id + "' complete");
+  ok(
+    typeof e.image === "string" && e.image.length > 0,
+    "composition entry '" + e.id + "' has a photo file name"
+  );
+});
+
+// Every famous meteorite now carries a photo.
+data.famous.forEach(function (m) {
+  ok(
+    typeof m.image === "string" && m.image.length > 0,
+    "famous meteorite '" + m.id + "' has a photo file name"
+  );
+});
+
+// Galleries, when present, are arrays of non-empty file names.
+var galleryCount = 0;
+data.types.forEach(function (t) {
+  if (t.gallery === undefined) return;
+  ok(Array.isArray(t.gallery), "type '" + t.id + "' gallery is an array");
+  t.gallery.forEach(function (g) {
+    ok(typeof g === "string" && g.length > 0, "type '" + t.id + "' gallery entry is a file name");
+  });
+  if (t.gallery.length) galleryCount++;
+});
+ok(galleryCount >= 5, "several types provide an extra photo gallery");
+
+/* ---------------- Internationalisation (i18n) ---------------- */
+
+ok(i18n.LANGS.indexOf("en") !== -1 && i18n.LANGS.indexOf("ru") !== -1,
+  "i18n supports English and Russian");
+eq(i18n.normalize("ru"), "ru", "normalize keeps a supported language");
+eq(i18n.normalize("zz"), "en", "normalize falls back to English");
+eq(i18n.normalize(undefined), "en", "normalize handles missing language");
+
+// Every English runtime label has a Russian counterpart.
+Object.keys(i18n.labels.en).forEach(function (key) {
+  ok(
+    typeof i18n.labels.ru[key] === "string" && i18n.labels.ru[key].length > 0,
+    "runtime label '" + key + "' has a Russian translation"
+  );
+});
+
+// Core navigation/chrome keys are present in the Russian static dictionary.
+[
+  "brand", "skip", "footer", "nav.home", "nav.types", "nav.identify",
+  "nav.glossary", "nav.quiz", "comp.th.photo", "types.empty"
+].forEach(function (key) {
+  ok(!!i18n.staticRu[key], "static Russian string present: " + key);
+});
+
+/* ---------------- Russian data translations ---------------- */
+
+// Every class and type is translated with the key fields.
+data.classes.forEach(function (c) {
+  var r = ru.classes[c.id];
+  ok(r && r.name && r.description, "class '" + c.id + "' is translated to Russian");
+});
+data.types.forEach(function (t) {
+  var r = ru.types[t.id];
+  ok(r && r.name && r.summary, "type '" + t.id + "' is translated to Russian");
+  ok(
+    r && Array.isArray(r.details) && r.details.length === t.details.length,
+    "type '" + t.id + "' has matching Russian detail paragraphs"
+  );
+  ok(
+    r && Array.isArray(r.composition) && r.composition.length === t.composition.length,
+    "type '" + t.id + "' Russian composition matches the English count"
+  );
+});
+data.compositionEntries.forEach(function (e) {
+  var r = ru.compositionEntries[e.id];
+  ok(r && r.name && r.detail, "composition '" + e.id + "' is translated to Russian");
+});
+data.famous.forEach(function (m) {
+  var r = ru.famous[m.id];
+  ok(r && r.name && r.note, "famous '" + m.id + "' is translated to Russian");
+});
+data.glossary.forEach(function (g) {
+  var r = ru.glossary[g.term];
+  ok(r && r.term && r.definition, "glossary term '" + g.term + "' is translated to Russian");
+});
+data.identifyTests.forEach(function (t) {
+  var r = ru.identifyTests[t.id];
+  ok(r && r.name && r.detail, "identify test '" + t.id + "' is translated to Russian");
+});
+// Russian quiz keeps the same option count (so the answer index stays valid).
+data.quiz.forEach(function (q) {
+  var r = ru.quiz[q.id];
+  ok(r && r.question && r.explanation, "quiz '" + q.id + "' is translated to Russian");
+  ok(
+    r && Array.isArray(r.options) && r.options.length === q.options.length,
+    "quiz '" + q.id + "' Russian options match the English option count"
+  );
 });
 
 /* ---------------- Glossary ---------------- */
@@ -280,14 +375,23 @@ var quizHtml = fs.readFileSync(path.join(root, "pages/quiz.html"), "utf8");
 ok(/id="quiz-form"/.test(quizHtml), "quiz page has #quiz-form");
 ok(/quiz\.js/.test(quizHtml), "quiz page loads the quiz logic module");
 
-// Every page should expose the new navigation links and a skip link.
+// Every page should expose the new navigation links, a skip link, the
+// language switcher and the i18n/translation scripts.
 pages.forEach(function (rel) {
   var html = fs.readFileSync(path.join(root, rel), "utf8");
   ok(/href="[^"]*identify\.html"/.test(html), rel + " links to the identify page");
   ok(/href="[^"]*glossary\.html"/.test(html), rel + " links to the glossary page");
   ok(/href="[^"]*quiz\.html"/.test(html), rel + " links to the quiz page");
   ok(/class="skip-link"/.test(html), rel + " has a skip-to-content link");
+  ok(/i18n\.js/.test(html), rel + " loads the i18n module");
+  ok(/data\/ru\.js/.test(html), rel + " loads the Russian translations");
+  ok(/class="lang-switch"/.test(html), rel + " has a language switcher");
+  ok(/data-lang="ru"/.test(html), rel + " offers a Russian language button");
+  ok(/data-i18n="nav\.home"/.test(html), rel + " tags the navigation for translation");
 });
+
+// The composition page gained a photo column.
+ok(/data-i18n="comp\.th\.photo"/.test(compHtml), "composition page has a Photo column header");
 
 // SEO/support files should be present.
 ok(fs.existsSync(path.join(root, "sitemap.xml")), "sitemap.xml exists");

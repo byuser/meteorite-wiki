@@ -480,6 +480,101 @@ table.data-table tr:hover td {
   width: 40%;
 }
 
+/* ---------- Language switcher ---------- */
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  align-self: center;
+}
+
+.lang-switch button {
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  border: none;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.lang-switch button + button {
+  border-left: 1px solid var(--border);
+}
+
+.lang-switch button:hover {
+  color: var(--text);
+}
+
+.lang-switch button.active {
+  background: var(--accent);
+  color: #1a1300;
+}
+
+/* ---------- Famous meteorite cards (with photos) ---------- */
+.famous-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.famous-card .card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem 1.25rem 1.25rem;
+  flex: 1;
+}
+
+.famous-card .card-body .badge {
+  align-self: flex-start;
+}
+
+/* ---------- Composition photo thumbnails ---------- */
+td.comp-photo {
+  width: 88px;
+}
+
+td.comp-photo img {
+  width: 72px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  background: var(--bg-panel);
+}
+
+td.comp-photo img.is-fallback {
+  object-fit: contain;
+}
+
+/* ---------- Type detail photo gallery ---------- */
+.gallery-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  margin: 0.75rem 0 1rem;
+}
+
+.gallery-item {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-panel);
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item img.is-fallback {
+  object-fit: contain;
+}
+
 /* ---------- Skip link (accessibility) ---------- */
 .skip-link {
   position: absolute;

@@ -63,6 +63,7 @@
       class: "stony",
       icon: "🪨",
       image: "Allende meteorite.jpg",
+      gallery: ["Hart CK3 Chondrule-5mmFOV-01.jpg"],
       summary:
         "Unmelted stony meteorites containing chondrules — tiny spherical grains " +
         "that formed in the solar nebula 4.56 billion years ago.",
@@ -125,6 +126,7 @@
       class: "stony",
       icon: "⚫",
       image: "Carbonaceous chondrite (Murchison Meteorite) (14601493358).jpg",
+      gallery: ["Murchison-meteorite-ANL.jpg"],
       summary:
         "A carbon- and water-rich subgroup of chondrites that preserves organic " +
         "molecules and is key to studying the origin of life's building blocks.",
@@ -185,6 +187,7 @@
       class: "stony",
       icon: "🔴",
       image: "Shergotty meteorite.jpg",
+      gallery: ["NWA 2373 shergottite, 6mm piece.jpg"],
       summary:
         "Rare achondrites blasted off the surface of Mars by impacts, carrying " +
         "trapped gases that match the Martian atmosphere measured by landers.",
@@ -215,6 +218,7 @@
       class: "stony",
       icon: "🌕",
       image: "Allan Hills 81005, lunar meteorite.jpg",
+      gallery: ["Lunar Meteorite Fragmental Breccia.jpg"],
       summary:
         "Fragments of the Moon's crust launched by impacts, whose composition " +
         "matches the rocks returned by the Apollo missions.",
@@ -245,6 +249,7 @@
       class: "stony",
       icon: "🟤",
       image: "MillbillillieMeteorite.jpg",
+      gallery: ["Large Asteroid Vesta.png"],
       summary:
         "Basaltic achondrites from the crust of the giant asteroid Vesta, the " +
         "best-sampled of the HED (howardite–eucrite–diogenite) clan.",
@@ -274,6 +279,7 @@
       class: "iron",
       icon: "🔩",
       image: "Widmanstätten pattern kevinzim.jpg",
+      gallery: ["Gibeon meteorite slice.jpg", "Iron meteorite. Toluca, Mexico-8913.jpg"],
       summary:
         "The most common iron meteorites, named for the octahedral arrangement " +
         "of metal crystals that produces the Widmanstätten pattern.",
@@ -304,6 +310,7 @@
       class: "iron",
       icon: "⬛",
       image: "Iron-Meteorite - surface grinding with Widmanstätten pattern.jpg",
+      gallery: ["Widmanstatten patterns 2.jpg"],
       summary:
         "Low-nickel iron meteorites made almost entirely of large kamacite " +
         "crystals, often showing fine Neumann lines from shock.",
@@ -420,7 +427,7 @@
       name: "Diogenites",
       class: "stony",
       icon: "🟫",
-      image: "Tatahouine meteorite.jpg",
+      image: "Tatahouine Diogenite 72g.jpg",
       summary:
         "Coarse, pyroxene-rich achondrites that formed deep in the crust of " +
         "asteroid 4 Vesta — the 'D' of the HED meteorite clan.",
@@ -449,7 +456,7 @@
       name: "Howardites",
       class: "stony",
       icon: "🧱",
-      image: "Howardite meteorite.jpg",
+      image: "NWA 5489 howardite meteorite.jpg",
       summary:
         "Brecciated achondrites made of broken eucrite and diogenite fragments — " +
         "the 'H' of HED, a scrambled record of Vesta's surface.",
@@ -508,7 +515,8 @@
       name: "Angrites",
       class: "stony",
       icon: "🟧",
-      image: "Angrite NWA 1296.jpg",
+      image: "NWA 2999 meteorite, angrite.jpg",
+      gallery: ["D'Orbigny meteorite, fragment.jpg"],
       summary:
         "Rare, ancient basaltic achondrites whose unusual chemistry records some " +
         "of the earliest volcanism in the Solar System.",
@@ -538,7 +546,8 @@
       name: "Aubrites",
       class: "stony",
       icon: "🤍",
-      image: "Norton County meteorite.jpg",
+      image: "Bishopville meteorite, aubrite (14601801028).jpg",
+      gallery: ["Cumberland Falls meteorite.jpg"],
       summary:
         "Pale, enstatite-rich achondrites so reduced they are nearly white — " +
         "igneous cousins of the enstatite chondrites.",
@@ -568,6 +577,7 @@
   var compositionEntries = [
     {
       id: "olivine",
+      image: "Olivine-gem7-10a.jpg",
       name: "Olivine",
       kind: "Silicate mineral",
       detail:
@@ -576,6 +586,7 @@
     },
     {
       id: "pyroxene",
+      image: "Pyroxene crystals.jpg",
       name: "Pyroxene",
       kind: "Silicate mineral",
       detail:
@@ -584,6 +595,7 @@
     },
     {
       id: "kamacite",
+      image: "Widmanstatten patterns 2.jpg",
       name: "Kamacite",
       kind: "Iron-nickel alloy",
       detail:
@@ -592,6 +604,7 @@
     },
     {
       id: "taenite",
+      image: "Iron meteorite. Toluca, Mexico-8913.jpg",
       name: "Taenite",
       kind: "Iron-nickel alloy",
       detail:
@@ -600,6 +613,7 @@
     },
     {
       id: "plagioclase",
+      image: "Plagioclase twinning.jpg",
       name: "Plagioclase",
       kind: "Feldspar mineral",
       detail:
@@ -608,6 +622,7 @@
     },
     {
       id: "troilite",
+      image: "Gebel-Kamil-slice-10.7g.jpg",
       name: "Troilite",
       kind: "Iron sulfide",
       detail:
@@ -616,6 +631,7 @@
     },
     {
       id: "enstatite",
+      image: "Enstatite-83152.jpg",
       name: "Enstatite",
       kind: "Silicate mineral",
       detail:
@@ -624,6 +640,7 @@
     },
     {
       id: "schreibersite",
+      image: "Gebel-Kamil-slice-10.7g.jpg",
       name: "Schreibersite",
       kind: "Iron-nickel phosphide",
       detail:
@@ -632,6 +649,7 @@
     },
     {
       id: "maskelynite",
+      image: "NWA 2373 shergottite, 6mm piece.jpg",
       name: "Maskelynite",
       kind: "Shock-formed glass",
       detail:
@@ -640,6 +658,7 @@
     },
     {
       id: "chromite",
+      image: "Chromite.jpg",
       name: "Chromite",
       kind: "Oxide mineral",
       detail:
@@ -652,6 +671,7 @@
   var famous = [
     {
       id: "hoba",
+      image: "Namibie Hoba Meteorite 05.JPG",
       name: "Hoba",
       location: "Namibia",
       year: "discovered 1920",
@@ -661,6 +681,7 @@
     },
     {
       id: "allende",
+      image: "Allende meteorite.jpg",
       name: "Allende",
       location: "Chihuahua, Mexico",
       year: "fell 1969",
@@ -670,6 +691,7 @@
     },
     {
       id: "willamette",
+      image: "Willamette Meteorite AMNH.jpg",
       name: "Willamette",
       location: "Oregon, USA",
       year: "discovered 1902",
@@ -679,6 +701,7 @@
     },
     {
       id: "chelyabinsk",
+      image: "Cheljabinsk meteorite fragment.jpg",
       name: "Chelyabinsk",
       location: "Russia",
       year: "fell 2013",
@@ -688,6 +711,7 @@
     },
     {
       id: "murchison",
+      image: "Murchison-meteorite-ANL.jpg",
       name: "Murchison",
       location: "Victoria, Australia",
       year: "fell 1969",
@@ -697,6 +721,7 @@
     },
     {
       id: "sikhote-alin",
+      image: "SikhoteAlinMeteorite.jpg",
       name: "Sikhote-Alin",
       location: "Siberia, Russia",
       year: "fell 1947",
@@ -706,6 +731,7 @@
     },
     {
       id: "canyon-diablo",
+      image: "Canyon-diablo-meteorite.jpg",
       name: "Canyon Diablo",
       location: "Arizona, USA",
       year: "discovered 1891",
@@ -715,6 +741,7 @@
     },
     {
       id: "tissint",
+      image: "Tissint meteorite.jpg",
       name: "Tissint",
       location: "Morocco",
       year: "fell 2011",

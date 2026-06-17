@@ -22,20 +22,25 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href="../index.html">☄️ Meteorite Wiki</a>
+        <a class="brand" href="../index.html" data-i18n="brand">☄️ Meteorite Wiki</a>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
-          <a href="types.html" class="active">Types</a>
-          <a href="composition.html">Composition</a>
-          <a href="classification.html">Classification</a>
-          <a href="identify.html">Identify</a>
-          <a href="famous.html">Famous</a>
-          <a href="glossary.html">Glossary</a>
-          <a href="quiz.html">Quiz</a>
-          <a href="about.html">About</a>
+          <a href="../index.html" data-i18n="nav.home">Home</a>
+          <a href="types.html" class="active" data-i18n="nav.types">Types</a>
+          <a href="composition.html" data-i18n="nav.composition">Composition</a>
+          <a href="classification.html" data-i18n="nav.classification">Classification</a>
+          <a href="identify.html" data-i18n="nav.identify">Identify</a>
+          <a href="famous.html" data-i18n="nav.famous">Famous</a>
+          <a href="glossary.html" data-i18n="nav.glossary">Glossary</a>
+          <a href="quiz.html" data-i18n="nav.quiz">Quiz</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+        
+          <div class="lang-switch" role="group" data-i18n-aria="lang.aria" aria-label="Language">
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="ru">RU</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -50,12 +55,14 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>Meteorite Wiki — an educational project. Content for learning purposes.</p>
+        <p data-i18n="footer">Meteorite Wiki — an educational project. Content for learning purposes.</p>
       </div>
     </footer>
 
     <script src="../data/meteorites.js"></script>
     <script src="../js/filter.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../data/ru.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

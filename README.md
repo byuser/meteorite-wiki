@@ -30,12 +30,36 @@ meteorite-wiki/
 ├── js/
 │   ├── filter.js           # Pure search/filter logic (browser + Node)
 │   ├── quiz.js             # Pure quiz-scoring logic (browser + Node)
-│   └── main.js             # DOM rendering & interactivity
-├── data/meteorites.js      # Single shared data source (UMD module)
+│   ├── i18n.js             # UI strings (English + Russian) & helpers
+│   └── main.js             # DOM rendering, i18n & interactivity
+├── data/
+│   ├── meteorites.js       # Single shared data source (UMD module)
+│   └── ru.js               # Russian translations of that data
 ├── tests/run.js            # Zero-dependency test suite
 ├── robots.txt              # Crawler directives
 └── sitemap.xml             # Search-engine sitemap
 ```
+
+## Languages
+
+The site is bilingual — **English** and **Russian (Русский)**. A switcher in
+the header (`EN | RU`) toggles the language; the choice is saved in
+`localStorage` and can also be forced with a `?lang=ru` query parameter.
+
+- Static page text is marked up with `data-i18n` attributes and translated from
+  `js/i18n.js` (English is read straight from the DOM, Russian from the module).
+- Data-driven content (types, composition, glossary, quiz, …) is translated in
+  `data/ru.js`, keyed by the same ids and merged over the English source at
+  render time, so any untranslated field simply falls back to English.
+
+## Photographs
+
+Every meteorite type has a lead photo and many also carry a small gallery of
+extra photographs on their detail page. Composition minerals and famous
+meteorites now show photos too. All images are referenced by their
+[Wikimedia Commons](https://commons.wikimedia.org/) file name and loaded via the
+`Special:FilePath` endpoint, with an inline SVG placeholder if one fails to
+load.
 
 All meteorite content — types, composition, famous examples, glossary,
 identification tests and quiz questions — lives in `data/meteorites.js`. That

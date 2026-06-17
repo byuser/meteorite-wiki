@@ -31,20 +31,25 @@
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href="index.html">☄️ Meteorite Wiki</a>
+        <a class="brand" href="index.html" data-i18n="brand">☄️ Meteorite Wiki</a>
         <nav class="main-nav" aria-label="Primary">
-          <a href="index.html" class="active">Home</a>
-          <a href="pages/types.html">Types</a>
-          <a href="pages/composition.html">Composition</a>
-          <a href="pages/classification.html">Classification</a>
-          <a href="pages/identify.html">Identify</a>
-          <a href="pages/famous.html">Famous</a>
-          <a href="pages/glossary.html">Glossary</a>
-          <a href="pages/quiz.html">Quiz</a>
-          <a href="pages/about.html">About</a>
+          <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+          <a href="pages/types.html" data-i18n="nav.types">Types</a>
+          <a href="pages/composition.html" data-i18n="nav.composition">Composition</a>
+          <a href="pages/classification.html" data-i18n="nav.classification">Classification</a>
+          <a href="pages/identify.html" data-i18n="nav.identify">Identify</a>
+          <a href="pages/famous.html" data-i18n="nav.famous">Famous</a>
+          <a href="pages/glossary.html" data-i18n="nav.glossary">Glossary</a>
+          <a href="pages/quiz.html" data-i18n="nav.quiz">Quiz</a>
+          <a href="pages/about.html" data-i18n="nav.about">About</a>
+        
+          <div class="lang-switch" role="group" data-i18n-aria="lang.aria" aria-label="Language">
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="ru">RU</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -52,19 +57,19 @@
     <main id="main">
       <div class="container">
         <section class="hero">
-          <h1>Explore the World of Meteorites</h1>
-          <p>
+          <h1 data-i18n="home.hero.h1">Explore the World of Meteorites</h1>
+          <p data-i18n="home.hero.p">
             Meteorites are fragments of asteroids, the Moon and Mars that survive
             their fiery plunge through Earth's atmosphere. This wiki is a friendly
             introduction to what they are, what they're made of, and how
             scientists tell them apart.
           </p>
-          <a class="btn" href="pages/types.html">Browse meteorite types</a>
+          <a class="btn" href="pages/types.html" data-i18n="home.hero.btn">Browse meteorite types</a>
         </section>
 
         <section>
-          <h2 class="section-title">What is a meteorite?</h2>
-          <p class="lead">
+          <h2 class="section-title" data-i18n="home.what.h2">What is a meteorite?</h2>
+          <p class="lead" data-i18n-html="home.what.p">
             A <strong>meteoroid</strong> is a small rocky or metallic body
             travelling through space. When it enters the atmosphere and glows it
             becomes a <strong>meteor</strong> (a "shooting star"). Any piece that
@@ -75,8 +80,8 @@
         </section>
 
         <section>
-          <h2 class="section-title">Featured types</h2>
-          <p class="lead">
+          <h2 class="section-title" data-i18n="home.featured.h2">Featured types</h2>
+          <p class="lead" data-i18n-html="home.featured.p">
             A taste of the types you can explore in this wiki — each with a real
             photograph. Click a card for the full profile, or
             <a href="pages/types.html">browse every type</a>.
@@ -85,36 +90,36 @@
         </section>
 
         <section>
-          <h2 class="section-title">Three main groups</h2>
+          <h2 class="section-title" data-i18n="home.groups.h2">Three main groups</h2>
           <div id="class-overview" class="card-grid"></div>
         </section>
 
         <section>
-          <h2 class="section-title">Dig deeper</h2>
+          <h2 class="section-title" data-i18n="home.dig.h2">Dig deeper</h2>
           <div class="card-grid">
             <a class="card link-card" href="pages/identify.html">
-              <h3><span class="icon" aria-hidden="true">🔍</span>Is it a meteorite?</h3>
-              <p>
+              <h3><span class="icon" aria-hidden="true">🔍</span><span data-i18n="home.dig.identify.h3">Is it a meteorite?</span></h3>
+              <p data-i18n="home.dig.identify.p">
                 Found a suspicious rock? Work through the field tests that tell a
                 real meteorite from a "meteorwrong".
               </p>
-              <span class="card-cta">Identify a find →</span>
+              <span class="card-cta" data-i18n="home.dig.identify.cta">Identify a find →</span>
             </a>
             <a class="card link-card" href="pages/glossary.html">
-              <h3><span class="icon" aria-hidden="true">📖</span>Glossary</h3>
-              <p>
+              <h3><span class="icon" aria-hidden="true">📖</span><span data-i18n="home.dig.glossary.h3">Glossary</span></h3>
+              <p data-i18n="home.dig.glossary.p">
                 From chondrules to regmaglypts — plain-language definitions of
                 every meteorite term used on this site.
               </p>
-              <span class="card-cta">Browse the terms →</span>
+              <span class="card-cta" data-i18n="home.dig.glossary.cta">Browse the terms →</span>
             </a>
             <a class="card link-card" href="pages/quiz.html">
-              <h3><span class="icon" aria-hidden="true">🧠</span>Take the quiz</h3>
-              <p>
+              <h3><span class="icon" aria-hidden="true">🧠</span><span data-i18n="home.dig.quiz.h3">Take the quiz</span></h3>
+              <p data-i18n="home.dig.quiz.p">
                 Think you've got it? Test your knowledge with a short, scored
                 self-quiz.
               </p>
-              <span class="card-cta">Start the quiz →</span>
+              <span class="card-cta" data-i18n="home.dig.quiz.cta">Start the quiz →</span>
             </a>
           </div>
         </section>
@@ -123,12 +128,14 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>Meteorite Wiki — an educational project. Content for learning purposes.</p>
+        <p data-i18n="footer">Meteorite Wiki — an educational project. Content for learning purposes.</p>
       </div>
     </footer>
 
     <script src="data/meteorites.js"></script>
     <script src="js/filter.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="data/ru.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
