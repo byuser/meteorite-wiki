@@ -9,7 +9,8 @@ them.
 | Page | File | What it covers |
 | --- | --- | --- |
 | Introduction / Home | `index.html` | What a meteorite is, featured types, the three main groups |
-| Types | `pages/types.html` | Browsable, searchable & filterable cards for every meteorite type |
+| Types | `pages/types.html` | Browsable, searchable & filterable photo cards for every meteorite type |
+| Type detail | `pages/type.html?id=…` | Full profile of a single type: photograph, description, key facts, "at a glance" table and related types |
 | Composition | `pages/composition.html` | Key minerals and metals, silicates vs. metal, the Widmanstätten pattern |
 | Classification | `pages/classification.html` | How meteorites are sorted into groups, chondrites vs. achondrites, falls vs. finds |
 | Famous | `pages/famous.html` | Notable meteorites such as Hoba, Allende and Chelyabinsk |
@@ -32,6 +33,14 @@ meteorite-wiki/
 All meteorite content lives in `data/meteorites.js`. That same module is loaded
 by the browser **and** imported by the tests, so the site and its tests can
 never drift apart.
+
+### Type cards & photos
+
+Each meteorite type is shown as a clickable card with a real photograph and
+opens a dedicated detail page (`pages/type.html?id=…`). Photos are referenced by
+their [Wikimedia Commons](https://commons.wikimedia.org/) file name and loaded
+on demand via the `Special:FilePath` endpoint; if an image can't be fetched the
+UI falls back to an inline placeholder so a card is never left blank.
 
 ## Running locally
 

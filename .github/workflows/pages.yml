@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - claude/meteorite-wiki-site-mb3o87
+      - claude/meteorite-cards-feature-ja0nia
   workflow_dispatch:
 
 # Allow the workflow to publish to GitHub Pages.

@@ -62,7 +62,17 @@ data.types.forEach(function (t) {
     Array.isArray(t.composition) && t.composition.length > 0,
     "type '" + t.id + "' lists composition"
   );
+  ok(
+    typeof t.image === "string" && t.image.length > 0,
+    "type '" + t.id + "' has a photo file name"
+  );
+  ok(
+    Array.isArray(t.details) && t.details.length > 0,
+    "type '" + t.id + "' has detail paragraphs"
+  );
 });
+
+ok(data.types.length >= 10, "the catalogue lists at least ten meteorite types");
 
 // Every class has at least one type.
 data.classes.forEach(function (c) {
@@ -83,6 +93,17 @@ data.compositionEntries.forEach(function (e) {
 
 eq(data.getClassById("iron").id, "iron", "getClassById returns the iron class");
 eq(data.getClassById("nope"), undefined, "getClassById returns undefined for unknown id");
+
+eq(
+  data.getTypeById("pallasite").id,
+  "pallasite",
+  "getTypeById returns the pallasite type"
+);
+eq(
+  data.getTypeById("nope"),
+  undefined,
+  "getTypeById returns undefined for unknown id"
+);
 
 /* ---------------- Filter logic ---------------- */
 
@@ -143,7 +164,8 @@ var pages = [
   "pages/composition.html",
   "pages/classification.html",
   "pages/famous.html",
-  "pages/about.html"
+  "pages/about.html",
+  "pages/type.html"
 ];
 
 pages.forEach(function (rel) {
@@ -164,6 +186,9 @@ ok(/data-class="iron"/.test(typesHtml), "types page has an iron filter button");
 
 var compHtml = fs.readFileSync(path.join(root, "pages/composition.html"), "utf8");
 ok(/id="composition-body"/.test(compHtml), "composition page has #composition-body");
+
+var detailHtml = fs.readFileSync(path.join(root, "pages/type.html"), "utf8");
+ok(/id="type-detail"/.test(detailHtml), "type detail page has #type-detail");
 
 /* ---------------- Report ---------------- */
 

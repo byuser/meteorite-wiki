@@ -170,14 +170,79 @@ h2.section-title {
 }
 
 .card .icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-right: 0.4rem;
 }
 
 .card h3 {
   margin: 0 0 0.35rem;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Clickable type cards with photos ---------- */
+a.card.type-card {
+  color: inherit;
+  text-decoration: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+a.card.type-card:hover {
+  text-decoration: none;
+}
+
+.card-media {
+  display: block;
+  aspect-ratio: 5 / 3;
+  background: var(--bg-panel);
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+a.card.type-card:hover .card-media img {
+  transform: scale(1.05);
+}
+
+.card-media img.is-fallback {
+  object-fit: contain;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem 1.25rem 1.25rem;
+  flex: 1;
+}
+
+.card-body .badge {
+  margin-bottom: 0.6rem;
+}
+
+.card-cta {
+  margin-top: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+a.card.type-card:hover .card-cta {
+  color: var(--accent-soft);
+}
+
+.result-count {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  margin: 1rem 0 0;
 }
 
 .card .badge {
@@ -314,6 +379,105 @@ table.data-table tr:hover td {
 
 .prose h2 {
   margin-top: 2rem;
+}
+
+/* ---------- Type detail page ---------- */
+.breadcrumb {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin: 0 0 1.25rem;
+}
+
+.breadcrumb span {
+  color: var(--text);
+}
+
+.type-detail {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+@media (min-width: 720px) {
+  .type-detail {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+.detail-media {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  aspect-ratio: 4 / 3;
+}
+
+.detail-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-media img.is-fallback {
+  object-fit: contain;
+}
+
+.img-credit {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--text);
+  background: rgba(11, 13, 23, 0.7);
+  padding: 0.1rem 0.5rem;
+  border-radius: 6px;
+}
+
+.detail-body h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0.5rem 0 0.75rem;
+}
+
+.detail-body h1 .icon {
+  font-size: 1.8rem;
+}
+
+.detail-columns {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 1rem;
+}
+
+@media (min-width: 820px) {
+  .detail-columns {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+
+.detail-aside {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 1.25rem 1.25rem;
+  align-self: start;
+}
+
+.fact-table {
+  margin-top: 0.5rem;
+}
+
+.fact-table th {
+  color: var(--text-dim);
+  font-weight: 500;
+  white-space: nowrap;
+  width: 40%;
 }
 
 /* ---------- Footer ---------- */
