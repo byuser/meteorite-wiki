@@ -3,9 +3,7 @@ name: Deploy Meteorite Wiki to GitHub Pages
 on:
   push:
     branches:
-      - claude/meteorite-wiki-site-mb3o87
-      - claude/meteorite-cards-feature-ja0nia
-      - claude/project-research-deploy-pb7l89
+      - master
   workflow_dispatch:
 
 # Allow the workflow to publish to GitHub Pages.
@@ -32,10 +30,9 @@ jobs:
 
   deploy:
     needs: test
-    # The github-pages environment only permits deployments from the site
-    # branch, so only attempt the deploy there. Other branches stop after the
-    # test job, which still gates every change.
-    if: github.ref == 'refs/heads/claude/meteorite-wiki-site-mb3o87'
+    # Publish from the default branch only; other branches stop after the test
+    # job, which still gates every change.
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
