@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meteorite Type — Meteorite Wiki</title>
+    <title>Quiz — Meteorite Wiki</title>
     <meta
       name="description"
-      content="Detailed profile of a single meteorite type, with a photograph, key facts, composition and related types."
+      content="Test your meteorite knowledge with a short, interactive self-quiz covering types, composition and classification."
     />
     <meta name="theme-color" content="#0b0d17" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Meteorite Type — Meteorite Wiki" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Quiz — Meteorite Wiki" />
     <meta
       property="og:description"
-      content="Detailed profile of a single meteorite type, with a photograph, key facts, composition and related types."
+      content="A short interactive quiz to test your meteorite knowledge."
     />
     <link
       rel="icon"
@@ -28,13 +28,13 @@
         <a class="brand" href="../index.html">☄️ Meteorite Wiki</a>
         <nav class="main-nav" aria-label="Primary">
           <a href="../index.html">Home</a>
-          <a href="types.html" class="active">Types</a>
+          <a href="types.html">Types</a>
           <a href="composition.html">Composition</a>
           <a href="classification.html">Classification</a>
           <a href="identify.html">Identify</a>
           <a href="famous.html">Famous</a>
           <a href="glossary.html">Glossary</a>
-          <a href="quiz.html">Quiz</a>
+          <a href="quiz.html" class="active">Quiz</a>
           <a href="about.html">About</a>
         </nav>
       </div>
@@ -42,9 +42,24 @@
 
     <main id="main">
       <div class="container">
-        <div id="type-detail">
-          <p class="empty-state">Loading meteorite type…</p>
-        </div>
+        <h1>Test Your Knowledge</h1>
+        <p class="lead">
+          A quick self-test on what you can learn across this wiki. Pick an answer
+          for each question, then check how you did — every answer comes with a
+          short explanation.
+        </p>
+
+        <p
+          id="quiz-result"
+          class="quiz-result"
+          role="status"
+          tabindex="-1"
+          hidden
+        ></p>
+
+        <form id="quiz-form" class="quiz">
+          <noscript>The quiz needs JavaScript enabled to score your answers.</noscript>
+        </form>
       </div>
     </main>
 
@@ -56,6 +71,7 @@
 
     <script src="../data/meteorites.js"></script>
     <script src="../js/filter.js"></script>
+    <script src="../js/quiz.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://byuser.github.io/meteorite-wiki/sitemap.xml

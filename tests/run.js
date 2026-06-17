@@ -10,6 +10,7 @@ var path = require("path");
 
 var data = require("../data/meteorites.js");
 var filter = require("../js/filter.js");
+var quiz = require("../js/quiz.js");
 
 var passed = 0;
 var failed = 0;
@@ -89,6 +90,82 @@ data.compositionEntries.forEach(function (e) {
   ok(!!e.name && !!e.kind && !!e.detail, "composition entry '" + e.id + "' complete");
 });
 
+/* ---------------- Glossary ---------------- */
+
+ok(
+  Array.isArray(data.glossary) && data.glossary.length >= 10,
+  "there are at least ten glossary terms"
+);
+data.glossary.forEach(function (g) {
+  ok(!!g.term && !!g.definition, "glossary term '" + g.term + "' is complete");
+});
+
+/* ---------------- Identification tests ---------------- */
+
+var validVerdicts = ["yes", "no", "maybe"];
+ok(
+  Array.isArray(data.identifyTests) && data.identifyTests.length >= 5,
+  "there are at least five identification tests"
+);
+data.identifyTests.forEach(function (t) {
+  ok(!!t.id && !!t.name && !!t.detail, "identify test '" + t.id + "' is complete");
+  ok(
+    validVerdicts.indexOf(t.verdict) !== -1,
+    "identify test '" + t.id + "' has a valid verdict (" + t.verdict + ")"
+  );
+});
+
+/* ---------------- Quiz data ---------------- */
+
+ok(
+  Array.isArray(data.quiz) && data.quiz.length >= 5,
+  "there are at least five quiz questions"
+);
+var seenQuizIds = {};
+data.quiz.forEach(function (q) {
+  ok(!!q.id && !seenQuizIds[q.id], "quiz id '" + q.id + "' is present and unique");
+  seenQuizIds[q.id] = true;
+  ok(!!q.question, "quiz '" + q.id + "' has a question");
+  ok(
+    Array.isArray(q.options) && q.options.length >= 2,
+    "quiz '" + q.id + "' offers at least two options"
+  );
+  ok(
+    typeof q.answer === "number" && q.answer >= 0 && q.answer < q.options.length,
+    "quiz '" + q.id + "' answer index is within range"
+  );
+  ok(!!q.explanation, "quiz '" + q.id + "' has an explanation");
+});
+
+/* ---------------- Quiz logic ---------------- */
+
+var sampleQ = data.quiz[0];
+ok(quiz.isCorrect(sampleQ, sampleQ.answer), "isCorrect is true for the right answer");
+ok(
+  !quiz.isCorrect(sampleQ, (sampleQ.answer + 1) % sampleQ.options.length),
+  "isCorrect is false for a wrong answer"
+);
+
+// A perfect set of answers scores full marks.
+var perfect = {};
+data.quiz.forEach(function (q) {
+  perfect[q.id] = q.answer;
+});
+eq(
+  quiz.scoreQuiz(data.quiz, perfect),
+  data.quiz.length,
+  "scoreQuiz awards full marks for all-correct answers"
+);
+
+// No answers scores zero.
+eq(quiz.scoreQuiz(data.quiz, {}), 0, "scoreQuiz returns 0 when nothing is answered");
+
+ok(
+  typeof quiz.gradeMessage(data.quiz.length, data.quiz.length) === "string" &&
+    quiz.gradeMessage(data.quiz.length, data.quiz.length).length > 0,
+  "gradeMessage returns a non-empty string for a perfect score"
+);
+
 /* ---------------- Helpers ---------------- */
 
 eq(data.getClassById("iron").id, "iron", "getClassById returns the iron class");
@@ -163,7 +240,10 @@ var pages = [
   "pages/types.html",
   "pages/composition.html",
   "pages/classification.html",
+  "pages/identify.html",
   "pages/famous.html",
+  "pages/glossary.html",
+  "pages/quiz.html",
   "pages/about.html",
   "pages/type.html"
 ];
@@ -189,6 +269,30 @@ ok(/id="composition-body"/.test(compHtml), "composition page has #composition-bo
 
 var detailHtml = fs.readFileSync(path.join(root, "pages/type.html"), "utf8");
 ok(/id="type-detail"/.test(detailHtml), "type detail page has #type-detail");
+
+var identifyHtml = fs.readFileSync(path.join(root, "pages/identify.html"), "utf8");
+ok(/id="identify-grid"/.test(identifyHtml), "identify page has #identify-grid");
+
+var glossaryHtml = fs.readFileSync(path.join(root, "pages/glossary.html"), "utf8");
+ok(/id="glossary-list"/.test(glossaryHtml), "glossary page has #glossary-list");
+
+var quizHtml = fs.readFileSync(path.join(root, "pages/quiz.html"), "utf8");
+ok(/id="quiz-form"/.test(quizHtml), "quiz page has #quiz-form");
+ok(/quiz\.js/.test(quizHtml), "quiz page loads the quiz logic module");
+
+// Every page should expose the new navigation links and a skip link.
+pages.forEach(function (rel) {
+  var html = fs.readFileSync(path.join(root, rel), "utf8");
+  ok(/href="[^"]*identify\.html"/.test(html), rel + " links to the identify page");
+  ok(/href="[^"]*glossary\.html"/.test(html), rel + " links to the glossary page");
+  ok(/href="[^"]*quiz\.html"/.test(html), rel + " links to the quiz page");
+  ok(/class="skip-link"/.test(html), rel + " has a skip-to-content link");
+});
+
+// SEO/support files should be present.
+ok(fs.existsSync(path.join(root, "sitemap.xml")), "sitemap.xml exists");
+ok(fs.existsSync(path.join(root, "robots.txt")), "robots.txt exists");
+ok(fs.existsSync(path.join(root, "404.html")), "404.html exists");
 
 /* ---------------- Report ---------------- */
 

@@ -5,6 +5,7 @@ on:
     branches:
       - claude/meteorite-wiki-site-mb3o87
       - claude/meteorite-cards-feature-ja0nia
+      - claude/project-research-deploy-pb7l89
   workflow_dispatch:
 
 # Allow the workflow to publish to GitHub Pages.

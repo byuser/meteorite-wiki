@@ -414,6 +414,153 @@
         "Vaca Muerta in Chile is a classic strewn field of these rare meteorites, " +
           "with thousands of fragments scattered across the Atacama Desert."
       ]
+    },
+    {
+      id: "diogenite",
+      name: "Diogenites",
+      class: "stony",
+      icon: "🟫",
+      image: "Tatahouine meteorite.jpg",
+      summary:
+        "Coarse, pyroxene-rich achondrites that formed deep in the crust of " +
+        "asteroid 4 Vesta — the 'D' of the HED meteorite clan.",
+      keyFacts: [
+        "Cumulate rocks crystallised slowly at depth on Vesta",
+        "Dominated by coarse orthopyroxene crystals",
+        "Sit below eucrites in Vesta's layered crust"
+      ],
+      composition: ["Orthopyroxene", "Olivine", "Chromite"],
+      example: "Tatahouine (fell in Tunisia, 1931)",
+      parentBody: "Asteroid 4 Vesta",
+      age: "≈4.4 billion years",
+      details: [
+        "Diogenites are the deep-crust members of the HED family. Where eucrites " +
+          "are surface lavas, diogenites crystallised slowly far below, growing " +
+          "into coarse mosaics of magnesium-rich orthopyroxene.",
+        "Their chemistry and oxygen-isotope fingerprint tie them firmly to Vesta, " +
+          "the same parent body confirmed by NASA's Dawn mission for the eucrites.",
+        "The Tatahouine diogenite famously shattered into hundreds of small green " +
+          "shards when it fell in Tunisia in 1931, making it a textbook example of " +
+          "this rare rock type."
+      ]
+    },
+    {
+      id: "howardite",
+      name: "Howardites",
+      class: "stony",
+      icon: "🧱",
+      image: "Howardite meteorite.jpg",
+      summary:
+        "Brecciated achondrites made of broken eucrite and diogenite fragments — " +
+        "the 'H' of HED, a scrambled record of Vesta's surface.",
+      keyFacts: [
+        "Mixtures (breccias) of eucrite and diogenite debris",
+        "Built up in Vesta's impact-battered regolith",
+        "Often contain fragments of carbonaceous impactors"
+      ],
+      composition: ["Pyroxene", "Plagioclase", "Olivine"],
+      example: "Kapoeta (fell in Sudan, 1942)",
+      parentBody: "Asteroid 4 Vesta",
+      age: "≈4.4 billion years",
+      details: [
+        "Howardites are not a single rock but a jumble: a soil-like breccia of " +
+          "smashed eucrite and diogenite pieces welded together near Vesta's " +
+          "surface by countless impacts.",
+        "Because they sample the asteroid's regolith, howardites sometimes trap " +
+          "tiny fragments of dark carbonaceous meteorites that struck Vesta, " +
+          "recording collisions across the asteroid belt.",
+        "Together with eucrites and diogenites they complete the HED suite, " +
+          "letting geologists reconstruct the layered crust of a single small " +
+          "world from meteorites alone."
+      ]
+    },
+    {
+      id: "enstatite-chondrite",
+      name: "Enstatite Chondrites",
+      class: "stony",
+      icon: "⚪",
+      image: "Abee meteorite.jpg",
+      summary:
+        "Highly reduced chondrites rich in the magnesium pyroxene enstatite, " +
+        "formed in the dry inner reaches of the early Solar System.",
+      keyFacts: [
+        "Among the most chemically reduced rocks known",
+        "Split into high-iron (EH) and low-iron (EL) groups",
+        "Isotopically the closest match to bulk Earth"
+      ],
+      composition: ["Enstatite", "Iron-nickel metal", "Troilite", "Sulfides"],
+      example: "Abee (fell in Canada, 1952 — an EH chondrite)",
+      parentBody: "Reduced inner-belt asteroids",
+      age: "≈4.56 billion years",
+      details: [
+        "Enstatite chondrites formed where there was little oxygen, so almost all " +
+          "their iron stayed as metal or sulfide rather than rusting into silicate, " +
+          "making them some of the most reduced rocks in the collection.",
+        "They carry exotic sulfide minerals that only survive in very dry, " +
+          "oxygen-poor conditions, pointing to an origin close to the young Sun.",
+        "Their oxygen isotopes match Earth's almost exactly, so many researchers " +
+          "think enstatite-chondrite-like material was a major ingredient in " +
+          "building our planet."
+      ]
+    },
+    {
+      id: "angrite",
+      name: "Angrites",
+      class: "stony",
+      icon: "🟧",
+      image: "Angrite NWA 1296.jpg",
+      summary:
+        "Rare, ancient basaltic achondrites whose unusual chemistry records some " +
+        "of the earliest volcanism in the Solar System.",
+      keyFacts: [
+        "Among the oldest dated igneous rocks (~4.56 billion years)",
+        "Rich in calcium-bearing augite pyroxene",
+        "Used as precise time anchors for the early Solar System"
+      ],
+      composition: ["Augite", "Olivine", "Plagioclase", "Spinel"],
+      example: "Angra dos Reis (fell in Brazil, 1869 — the type angrite)",
+      parentBody: "An early-melted protoplanet",
+      age: "≈4.564 billion years",
+      details: [
+        "Angrites are an exotic clan of volcanic meteorites named after Angra dos " +
+          "Reis, which fell in Brazil in 1869. Their distinctive calcium-rich " +
+          "minerals set them apart from all other basalts.",
+        "They crystallised within a few million years of the Solar System's birth, " +
+          "so their precisely measured ages serve as anchor points for the entire " +
+          "chronology of planet formation.",
+        "Their parent body remains unidentified, but the rocks reveal a small " +
+          "world that melted, erupted lava and cooled — all before Earth had " +
+          "finished forming."
+      ]
+    },
+    {
+      id: "aubrite",
+      name: "Aubrites",
+      class: "stony",
+      icon: "🤍",
+      image: "Norton County meteorite.jpg",
+      summary:
+        "Pale, enstatite-rich achondrites so reduced they are nearly white — " +
+        "igneous cousins of the enstatite chondrites.",
+      keyFacts: [
+        "Made almost entirely of iron-free enstatite",
+        "Highly reduced, like the enstatite chondrites",
+        "Often light grey to white with a translucent fusion crust"
+      ],
+      composition: ["Enstatite", "Diopside", "Iron-nickel metal"],
+      example: "Norton County (fell in the USA, 1948)",
+      parentBody: "A reduced, differentiated asteroid",
+      age: "≈4.5 billion years",
+      details: [
+        "Aubrites are unusually pale achondrites built almost entirely from " +
+          "enstatite that contains virtually no iron, giving the rock a ghostly " +
+          "off-white colour quite unlike most meteorites.",
+        "Their extreme chemical reduction links them to the enstatite chondrites, " +
+          "suggesting both formed in the same dry, oxygen-poor part of the early " +
+          "Solar System before the aubrite parent body melted.",
+        "Norton County, which fell over Kansas and Nebraska in 1948, dropped a " +
+          "more-than-one-tonne main mass and remains the best-known aubrite."
+      ]
     }
   ];
 
@@ -466,6 +613,38 @@
       detail:
         "An iron sulfide mineral (FeS) found as inclusions in many iron and " +
         "stony meteorites."
+    },
+    {
+      id: "enstatite",
+      name: "Enstatite",
+      kind: "Silicate mineral",
+      detail:
+        "A magnesium-rich pyroxene that dominates enstatite chondrites and the " +
+        "pale aubrite achondrites."
+    },
+    {
+      id: "schreibersite",
+      name: "Schreibersite",
+      kind: "Iron-nickel phosphide",
+      detail:
+        "A phosphorus-bearing metal mineral found in iron meteorites and a " +
+        "possible source of phosphorus for early-Earth chemistry."
+    },
+    {
+      id: "maskelynite",
+      name: "Maskelynite",
+      kind: "Shock-formed glass",
+      detail:
+        "Plagioclase that has been turned to glass by impact shock, a tell-tale " +
+        "feature of many Martian meteorites."
+    },
+    {
+      id: "chromite",
+      name: "Chromite",
+      kind: "Oxide mineral",
+      detail:
+        "A chromium-iron oxide that survives weathering well and is used to " +
+        "trace meteoritic material in ancient sediments."
     }
   ];
 
@@ -506,6 +685,302 @@
       note:
         "An ordinary chondrite whose airburst over Russia was captured by " +
         "thousands of cameras and injured over 1,000 people."
+    },
+    {
+      id: "murchison",
+      name: "Murchison",
+      location: "Victoria, Australia",
+      year: "fell 1969",
+      note:
+        "A carbonaceous chondrite that has yielded dozens of amino acids and " +
+        "thousands of organic compounds, making it a cornerstone of astrobiology."
+    },
+    {
+      id: "sikhote-alin",
+      name: "Sikhote-Alin",
+      location: "Siberia, Russia",
+      year: "fell 1947",
+      note:
+        "A massive iron meteorite that broke apart in a daylight fireball, " +
+        "scattering thousands of fragments covered in textbook regmaglypts."
+    },
+    {
+      id: "canyon-diablo",
+      name: "Canyon Diablo",
+      location: "Arizona, USA",
+      year: "discovered 1891",
+      note:
+        "The iron meteorite that blasted out Meteor (Barringer) Crater about " +
+        "50,000 years ago, one of the best-preserved impact craters on Earth."
+    },
+    {
+      id: "tissint",
+      name: "Tissint",
+      location: "Morocco",
+      year: "fell 2011",
+      note:
+        "A Martian shergottite seen to fall and recovered fresh, giving " +
+        "scientists an exceptionally pristine sample of the planet Mars."
+    }
+  ];
+
+  // Plain-language definitions of the jargon used across the wiki.
+  var glossary = [
+    {
+      term: "Ablation",
+      definition:
+        "The melting and stripping away of a meteoroid's surface as it heats up " +
+        "during its high-speed plunge through the atmosphere."
+    },
+    {
+      term: "Achondrite",
+      definition:
+        "A stony meteorite from a body that melted, so it lacks chondrules and " +
+        "resembles a volcanic rock."
+    },
+    {
+      term: "Bolide",
+      definition:
+        "An exceptionally bright fireball, often one that explodes or fragments " +
+        "audibly as it crosses the sky."
+    },
+    {
+      term: "CAI",
+      definition:
+        "A calcium–aluminium-rich inclusion: among the very first solids to " +
+        "condense in the Solar System, used to date its origin."
+    },
+    {
+      term: "Chondrule",
+      definition:
+        "A millimetre-sized bead of once-molten rock that froze in space before " +
+        "being swept into a chondrite."
+    },
+    {
+      term: "Differentiation",
+      definition:
+        "The process by which a melted body separates into a dense metal core " +
+        "and a lighter rocky mantle and crust."
+    },
+    {
+      term: "Fall",
+      definition:
+        "A meteorite that was seen to fall and then recovered, so the date of " +
+        "its arrival is known."
+    },
+    {
+      term: "Find",
+      definition:
+        "A meteorite discovered on the ground with no observed fall, often after " +
+        "long weathering on Earth."
+    },
+    {
+      term: "Fireball",
+      definition:
+        "A meteor brighter than the planet Venus, produced by a larger-than-usual " +
+        "meteoroid entering the atmosphere."
+    },
+    {
+      term: "Fusion crust",
+      definition:
+        "The thin, dark, glassy skin formed when a meteorite's surface melts " +
+        "during atmospheric entry."
+    },
+    {
+      term: "HED",
+      definition:
+        "The howardite–eucrite–diogenite group of achondrites, all traced to the " +
+        "asteroid 4 Vesta."
+    },
+    {
+      term: "Meteor",
+      definition:
+        "The streak of light — a 'shooting star' — made by a meteoroid burning " +
+        "up in the atmosphere."
+    },
+    {
+      term: "Meteorite",
+      definition:
+        "A natural object from space that survives its fall through the " +
+        "atmosphere and reaches the ground."
+    },
+    {
+      term: "Meteoroid",
+      definition:
+        "A small rocky or metallic body travelling through space, smaller than " +
+        "an asteroid."
+    },
+    {
+      term: "Parent body",
+      definition:
+        "The asteroid, moon or planet a meteorite was originally part of before " +
+        "being knocked into space."
+    },
+    {
+      term: "Regmaglypts",
+      definition:
+        "The shallow, thumbprint-like depressions sculpted into a meteorite's " +
+        "surface by atmospheric melting."
+    },
+    {
+      term: "Strewn field",
+      definition:
+        "The area over which fragments of a single meteorite are scattered after " +
+        "it breaks apart in the air."
+    },
+    {
+      term: "Widmanstätten pattern",
+      definition:
+        "The lattice of intergrown kamacite and taenite crystals revealed when an " +
+        "iron meteorite is cut, polished and etched."
+    }
+  ];
+
+  // Practical tests people use to tell a meteorite from a 'meteorwrong'.
+  // `verdict` is "yes" (points toward a meteorite), "no" (rules one out) or
+  // "maybe" (suggestive but not decisive on its own).
+  var identifyTests = [
+    {
+      id: "fusion-crust",
+      name: "Look for a fusion crust",
+      verdict: "yes",
+      detail:
+        "Fresh meteorites wear a thin, dark, often matte skin formed when the " +
+        "surface melted on entry. It contrasts with a lighter interior and " +
+        "weathers brown over the years."
+    },
+    {
+      id: "magnet-test",
+      name: "Try a magnet",
+      verdict: "maybe",
+      detail:
+        "Most meteorites contain iron-nickel metal and tug at a strong magnet. " +
+        "But many ordinary Earth rocks (especially magnetite and slag) are " +
+        "magnetic too, so this test alone proves nothing."
+    },
+    {
+      id: "heft",
+      name: "Weigh it in your hand",
+      verdict: "maybe",
+      detail:
+        "Meteorites are usually denser and heavier than they look because of " +
+        "their metal content. Unusual heft is a hint — but again, not proof."
+    },
+    {
+      id: "regmaglypts",
+      name: "Check for regmaglypts",
+      verdict: "yes",
+      detail:
+        "Shallow thumbprint-like dimples on the surface are a classic meteorite " +
+        "feature carved by atmospheric melting."
+    },
+    {
+      id: "streak-test",
+      name: "Do a streak test",
+      verdict: "no",
+      detail:
+        "Rubbed on unglazed tile, a true meteorite leaves no streak. A red-brown " +
+        "streak means hematite and a grey-black streak means magnetite — both " +
+        "common meteorwrongs."
+    },
+    {
+      id: "no-vesicles",
+      name: "Rule out bubbles and holes",
+      verdict: "no",
+      detail:
+        "Vesicles — the gas bubbles seen in lava and slag — do not occur in " +
+        "meteorites. A bubbly, frothy or glassy holey rock is almost certainly " +
+        "terrestrial or man-made."
+    },
+    {
+      id: "no-crystals",
+      name: "Rule out quartz and layers",
+      verdict: "no",
+      detail:
+        "Meteorites contain no quartz and show no sedimentary layering or large " +
+        "shiny crystals. If you see those, it is an Earth rock."
+    }
+  ];
+
+  // A short self-test quiz. `answer` is the index of the correct option.
+  var quiz = [
+    {
+      id: "q-survives",
+      question: "What do we call a space rock once it lands on Earth?",
+      options: ["A meteoroid", "A meteor", "A meteorite", "An asteroid"],
+      answer: 2,
+      explanation:
+        "It is a meteoroid in space, a meteor as it glows in the sky, and a " +
+        "meteorite once it reaches the ground."
+    },
+    {
+      id: "q-most-common",
+      question: "Which class makes up about 94% of all meteorite falls?",
+      options: ["Iron", "Stony", "Stony-iron", "Lunar"],
+      answer: 1,
+      explanation:
+        "Stony meteorites, dominated by silicate minerals, are by far the most " +
+        "common type to fall."
+    },
+    {
+      id: "q-chondrule",
+      question: "A chondrule is best described as…",
+      options: [
+        "A type of iron crystal",
+        "A millimetre-sized bead of once-molten rock",
+        "A crater on an asteroid",
+        "A Martian mineral"
+      ],
+      answer: 1,
+      explanation:
+        "Chondrules are tiny beads of melted rock that froze in space and give " +
+        "chondrites their name."
+    },
+    {
+      id: "q-widmanstatten",
+      question: "The Widmanstätten pattern is found in which meteorites?",
+      options: ["Carbonaceous chondrites", "Iron meteorites", "Lunar meteorites", "Aubrites"],
+      answer: 1,
+      explanation:
+        "The crisscross pattern of kamacite and taenite appears when an iron " +
+        "meteorite is cut, polished and etched."
+    },
+    {
+      id: "q-pallasite",
+      question: "Pallasites are prized for containing gem-quality crystals of…",
+      options: ["Quartz", "Diamond", "Olivine", "Calcite"],
+      answer: 2,
+      explanation:
+        "Pallasites suspend green olivine (the gem peridot) in a shining " +
+        "iron-nickel metal matrix."
+    },
+    {
+      id: "q-mars",
+      question: "How do scientists confirm a meteorite came from Mars?",
+      options: [
+        "It is radioactive",
+        "Trapped gas matches the Martian atmosphere",
+        "It is bright red",
+        "It floats in water"
+      ],
+      answer: 1,
+      explanation:
+        "Gas trapped inside Martian meteorites matches the atmosphere NASA's " +
+        "landers measured on Mars."
+    },
+    {
+      id: "q-meteorwrong",
+      question: "Which feature means a rock is almost certainly NOT a meteorite?",
+      options: [
+        "A dark fusion crust",
+        "Thumbprint-like regmaglypts",
+        "Gas bubbles (vesicles) or holes",
+        "Unusual heaviness"
+      ],
+      answer: 2,
+      explanation:
+        "Vesicles form in lava and slag but never in meteorites, so a bubbly " +
+        "rock is a classic 'meteorwrong'."
     }
   ];
 
@@ -514,6 +989,9 @@
     types: types,
     compositionEntries: compositionEntries,
     famous: famous,
+    glossary: glossary,
+    identifyTests: identifyTests,
+    quiz: quiz,
 
     // Helper used by both the UI and tests.
     getTypesByClass: function (classId) {

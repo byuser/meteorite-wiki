@@ -8,6 +8,7 @@
 
   var data = window.MeteoriteData;
   var filter = window.MeteoriteFilter;
+  var quiz = window.MeteoriteQuiz;
 
   // Are we inside the /pages/ directory or at the site root? This lets the
   // same script build correct relative links from any page.
@@ -412,6 +413,135 @@
     attachImageFallbacks(root);
   }
 
+  // Glossary page: a definition list of meteorite terms.
+  function renderGlossary() {
+    var dl = document.getElementById("glossary-list");
+    if (!dl) return;
+    dl.innerHTML = data.glossary
+      .map(function (g) {
+        return (
+          '<div class="glossary-item">' +
+          "<dt>" +
+          esc(g.term) +
+          "</dt><dd>" +
+          esc(g.definition) +
+          "</dd></div>"
+        );
+      })
+      .join("");
+  }
+
+  // Identify page: the meteorite-vs-meteorwrong test cards.
+  function renderIdentify() {
+    var grid = document.getElementById("identify-grid");
+    if (!grid) return;
+    var label = {
+      yes: "Points to a meteorite",
+      no: "Rules a meteorite out",
+      maybe: "Suggestive only"
+    };
+    grid.innerHTML = data.identifyTests
+      .map(function (t) {
+        return (
+          '<article class="card identify-card verdict-' +
+          esc(t.verdict) +
+          '">' +
+          '<span class="badge verdict-badge">' +
+          esc(label[t.verdict] || t.verdict) +
+          "</span>" +
+          "<h3>" +
+          esc(t.name) +
+          "</h3><p>" +
+          esc(t.detail) +
+          "</p></article>"
+        );
+      })
+      .join("");
+  }
+
+  // Quiz page: an interactive, scored self-test.
+  function renderQuiz() {
+    var form = document.getElementById("quiz-form");
+    if (!form || !quiz) return;
+
+    var resultEl = document.getElementById("quiz-result");
+    var questions = data.quiz;
+
+    form.innerHTML =
+      questions
+        .map(function (q, i) {
+          var options = q.options
+            .map(function (opt, j) {
+              var id = q.id + "-" + j;
+              return (
+                '<label class="quiz-option" for="' +
+                esc(id) +
+                '">' +
+                '<input type="radio" id="' +
+                esc(id) +
+                '" name="' +
+                esc(q.id) +
+                '" value="' +
+                j +
+                '" />' +
+                "<span>" +
+                esc(opt) +
+                "</span></label>"
+              );
+            })
+            .join("");
+          return (
+            '<fieldset class="quiz-question" data-qid="' +
+            esc(q.id) +
+            '">' +
+            "<legend>" +
+            (i + 1) +
+            ". " +
+            esc(q.question) +
+            "</legend>" +
+            '<div class="quiz-options">' +
+            options +
+            "</div>" +
+            '<p class="quiz-feedback" hidden></p>' +
+            "</fieldset>"
+          );
+        })
+        .join("") +
+      '<button type="submit" class="btn">Check my answers</button>';
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var answers = {};
+      questions.forEach(function (q) {
+        var checked = form.querySelector('input[name="' + q.id + '"]:checked');
+        if (checked) answers[q.id] = Number(checked.value);
+
+        // Show per-question feedback.
+        var fieldset = form.querySelector('[data-qid="' + q.id + '"]');
+        var feedback = fieldset.querySelector(".quiz-feedback");
+        var correct = quiz.isCorrect(q, answers[q.id]);
+        fieldset.classList.remove("is-correct", "is-wrong");
+        fieldset.classList.add(correct ? "is-correct" : "is-wrong");
+        feedback.textContent =
+          (correct ? "✓ Correct. " : "✗ Not quite. ") + q.explanation;
+        feedback.removeAttribute("hidden");
+      });
+
+      var score = quiz.scoreQuiz(questions, answers);
+      if (resultEl) {
+        resultEl.innerHTML =
+          "<strong>You scored " +
+          score +
+          " / " +
+          questions.length +
+          ".</strong> " +
+          esc(quiz.gradeMessage(score, questions.length));
+        resultEl.removeAttribute("hidden");
+        resultEl.focus();
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     renderClassOverview();
     renderTypesPage();
@@ -419,5 +549,8 @@
     renderFamous();
     renderFeatured();
     renderTypeDetail();
+    renderGlossary();
+    renderIdentify();
+    renderQuiz();
   });
 })();
